@@ -1,12 +1,11 @@
-import palavras from "./palavras";
-import Game from "./components/Jogo/Game";
-import Letters from "./components/Letras/Letters";
+import Jogo from "./components/Jogo/Jogo";
+import Letras from "./components/Letras/Letras";
 
 function App() {
   return (
     <div className="App">
-      <Game />
-      <Letters />
+      <Jogo />
+      <Letras />
     </div>
   );
 }

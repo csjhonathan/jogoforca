@@ -1,0 +1,69 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.jogo {
+  display: flex;
+  align-items: center;
+
+}
+
+.letras {
+  display: grid;
+  grid-template-columns: repeat(13, 1fr);
+  gap: 11px;
+  width: 664px;
+  margin: 70px auto;
+}
+
+.letra {
+  width: 40px;
+  height: 40px;
+  background: #9FAAB5;
+  border: 1px solid #7AA7C7;
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #798A9F;
+
+}
+
+.enabled {
+  background: #E1ECF4;
+  color: #39739D;
+}
+
+.wordArea {
+  display: flex;
+  flex-direction: column;
+  width: 664px;
+  align-items: flex-end;
+  justify-content: space-between;
+  height:600px ;
+
+}
+
+.selectWord {
+  width: 200px;
+  height: 60px;
+  background: #27AE60;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  color: #FFFFFF;
+  border: none;
+}
+
+.currentWord {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.currentWordLetter{
+  margin-left: 5px ;
+}
