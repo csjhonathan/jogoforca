@@ -1,5 +1,5 @@
-export default function LetrasButtons({letra}){
+export default function LetrasButtons({letra, enable}){
   return (
-    <button disabled className="letra">{letra}</button>
+    <button disabled = {enable} className={`letra ${enable===false? "enabled" : ""}`} onClick = {() => console.log(letra,enable)}>{letra.toLocaleUpperCase()}</button>
   )
 }
