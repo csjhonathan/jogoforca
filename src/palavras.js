@@ -23,4 +23,5 @@ const palavras = [
   "xadrez", "xilofone", "xarope", "xenofobia", "xereta", "xerife", "xaveco", "xixi", "xale",
   "zebra", "zagueiro", "zero", "zoeira", "zepelim", "zinco", "zumbido"
 ]
-export default palavras;
+
+export default palavras
