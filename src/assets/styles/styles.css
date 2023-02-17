@@ -88,6 +88,7 @@ body {
 
 .word {
   width: 80%;
+  height: 68px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
