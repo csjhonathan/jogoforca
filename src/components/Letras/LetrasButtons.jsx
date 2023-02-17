@@ -12,7 +12,12 @@ export default function LetrasButtons({ letra, palavraAtual, setPalavraAtual, im
 
     setCorrect(correctLetters)
 
-    const currentImg = img + 1
+    let currentImg = img
+    if (!palavraAtual.includes(letter) && img < 6) {
+      currentImg = img+1
+      setImg(currentImg)
+    }
+
     if (currentImg < 6) {
       setPalavraAtual(palavraAtual)
       setUsedLetters(used)
@@ -21,7 +26,6 @@ export default function LetrasButtons({ letra, palavraAtual, setPalavraAtual, im
     if (!palavraAtual.includes(letter) && img < 6) {
       setImg(currentImg)
     }
-
     if (correctLetters.join("").length === palavraAtual.length && correctLetters.join("") === palavraAtual) {
       setDisabled(true)
       setEndgame("win")
