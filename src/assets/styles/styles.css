@@ -38,7 +38,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 400px;
-  width: 50%;
+  
   align-items: flex-end;
   justify-content: space-between;
 }
@@ -87,7 +87,6 @@ body {
 }
 
 .word {
-  width: 80%;
   height: 68px;
   display: flex;
   align-items: center;

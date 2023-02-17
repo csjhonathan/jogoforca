@@ -2,6 +2,7 @@ import { useState } from "react";
 import Letras from "./components/Letras/Letras";
 import Jogo from "./components/Jogo/Jogo";
 import palavras from "./palavras.js"
+
 function App() {
   const [usedLetters, setUsedLetters] = useState([]);
   const [palavraAtual, setPalavraAtual] = useState("");
