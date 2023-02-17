@@ -4,7 +4,7 @@ export default function Palavra({palavraAtual, handleWord, endGame, img, correct
 
     <div className="rightBoard">
       <button data-test="choose-word"  className="selectWord" onClick={() => handleWord()}>Escolher Palavra</button>
-      <h1 data-test="word" className={`word ${endGame}`}>{ img === 6 || endGame === "lose"? palavraAtual : palavraAtual.map((e) => correct.includes(e) ? e : "_")}</h1>
+      <h1 data-test="word" className={`word ${endGame}`}>{palavraAtual}</h1>
     </div>
 
   )
