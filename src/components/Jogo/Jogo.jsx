@@ -1,9 +1,7 @@
 import Palavra from "./Palavra/Palavra"
 import imagens from "../../utils/imagens"
-import palavras from "../../palavras";
-import { useState } from "react";
 
-export default function Jogo({palavraAtual, setPalavraAtual, img, setImg,setDisabled, usedLetters, setUsedLetters,endGame, setEndgame , correct, setCorrect}) {
+export default function Jogo({palavras ,palavraAtual, setPalavraAtual, img, setImg, usedLetters, setUsedLetters ,setDisabled, endGame , setEndgame, correct, setCorrect}) {
   
 
   const handleWord = () => {

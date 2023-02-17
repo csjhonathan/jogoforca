@@ -1,5 +1,3 @@
-
-import { useState } from "react"
 import alfabeto from "../../utils/alfabeto"
 import LetrasButtons from "./LetrasButtons"
 

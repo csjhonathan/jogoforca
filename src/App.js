@@ -1,8 +1,7 @@
 import { useState } from "react";
-// import imagens from "./utils/imagens";
-// import palavras from "./palavras";
 import Letras from "./components/Letras/Letras";
 import Jogo from "./components/Jogo/Jogo";
+import palavras from "./palavras";
 function App() {
   const [usedLetters, setUsedLetters] = useState([]);
   const [palavraAtual, setPalavraAtual] = useState("");
@@ -13,7 +12,8 @@ function App() {
 
   return (
     <div className="App">
-      <Jogo 
+      <Jogo
+        palavras = {palavras} 
         palavraAtual={palavraAtual}
         setPalavraAtual={setPalavraAtual}
         img={img}
@@ -23,9 +23,10 @@ function App() {
         disabled = {disabled}
         setDisabled = {setDisabled}
         endGame = {endGame}
+        setEndgame = {setEndgame}
         correct = {correct}
         setCorrect = {setCorrect}
-        setEndgame = {setEndgame}
+        
         />
       <Letras
         palavraAtual={palavraAtual}
