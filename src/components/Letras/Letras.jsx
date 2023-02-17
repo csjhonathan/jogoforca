@@ -3,7 +3,7 @@ import { useState } from "react"
 import alfabeto from "../../utils/alfabeto"
 import LetrasButtons from "./LetrasButtons"
 
-export default function Letras({ palavraAtual, setPalavraAtual, img, setImg, usedLetters, setUsedLetters, disabled, setDisabled }) {
+export default function Letras({ palavraAtual, setPalavraAtual, img, setImg, usedLetters, setUsedLetters, disabled, setDisabled, setEndgame, correct, setCorrect}) {
 
 
   return (
@@ -19,8 +19,11 @@ export default function Letras({ palavraAtual, setPalavraAtual, img, setImg, use
             setImg={setImg}
             usedLetters={usedLetters}
             setUsedLetters={setUsedLetters}
-            disabled={disabled}
+            disabled={usedLetters.includes(l) ? true : disabled}
             setDisabled={setDisabled}
+            setEndgame = {setEndgame}
+            correct = {correct}
+            setCorrect = {setCorrect}
           />)
       })}
     </div>

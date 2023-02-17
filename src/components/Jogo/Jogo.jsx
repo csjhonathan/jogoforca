@@ -1,23 +1,22 @@
 import Palavra from "./Palavra/Palavra"
 import imagens from "../../utils/imagens"
 import palavras from "../../palavras";
-import Letras from "../Letras/Letras";
 import { useState } from "react";
 
-export default function Jogo() {
-  const [usedLetters, setUsedLetters] = useState([]);
-  const [palavraAtual, setPalavraAtual] = useState("");
-  const [img, setImg] = useState(0)
-  const [disabled, setDisabled] = useState( true );
+export default function Jogo({palavraAtual, setPalavraAtual, img, setImg,setDisabled, usedLetters, setUsedLetters,endGame, setEndgame , correct, setCorrect}) {
+  
 
   const handleWord = () => {
 
-    if (palavraAtual === "") {
+    if (palavraAtual === "" || img===6 || (correct.join("") === palavraAtual && correct.join("").length === palavraAtual.length)) {
       const indiceAleatorio = parseInt(Math.random() * palavras.length) - 1;
       const word = palavras[indiceAleatorio];
       setPalavraAtual(word);
-      setDisabled(false)
-      console.log(word)
+      setDisabled(false);
+      setImg(0);
+      setEndgame("");
+      setUsedLetters([])
+      setCorrect([])
     }
     
   }
@@ -25,23 +24,15 @@ export default function Jogo() {
   return (
     <div className="jogo">
       <div className="board">
-        <img src={`${imagens[img]}`} alt="" />
+        <img src={`${imagens[img]}`} alt="" data-test="game-image"/>
         <Palavra
           palavraAtual={palavraAtual.split("")}
           handleWord={handleWord}
           usedLetters={usedLetters}
+          endGame = {endGame}
+          img = {img}
         />
       </div>
-      <Letras
-        palavraAtual={palavraAtual}
-        setPalavraAtual={setPalavraAtual}
-        img={img}
-        setImg={setImg}
-        usedLetters={usedLetters}
-        setUsedLetters={setUsedLetters}
-        disabled = {disabled}
-        setDisabled = {setDisabled}
-      />
     </div>
   )
 }
