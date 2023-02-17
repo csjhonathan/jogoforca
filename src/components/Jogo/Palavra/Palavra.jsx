@@ -2,9 +2,9 @@ export default function Palavra({palavraAtual, handleWord, endGame, img, correct
 
   return (
 
-    <div data-test="word" className="rightBoard">
+    <div className="rightBoard">
       <button data-test="choose-word"  className="selectWord" onClick={() => handleWord()}>Escolher Palavra</button>
-      <h1 data-test="word" className={`word ${endGame}`}>{palavraAtual.map((e) => correct.includes(e) || img === 6  || endGame === "lose"? e : "_")}</h1>
+      <h1 data-test="word" className={`word ${endGame}`}>{ img === 6 || endGame === "lose"? palavraAtual : palavraAtual.map((e) => correct.includes(e) ? e : "_")}</h1>
     </div>
 
   )
