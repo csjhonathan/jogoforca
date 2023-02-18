@@ -36,6 +36,10 @@ export default function LetrasButtons({ letra, palavraAtual, setPalavraAtual, im
   }
 
   return (
-    <button data-test="letter"  disabled={disabled} className={`letra ${(disabled ? "" : "enabled")}`} onClick={() => handleUsedLetter(letra)} >{letra.toUpperCase()}</button>
+    <button data-test="letter"  
+    disabled={disabled} 
+    className={`letra ${(disabled ? "" : "enabled")}`} 
+    onClick={() => handleUsedLetter(letra)}
+    >{letra.toUpperCase()}</button>
   )
 }

@@ -1,7 +1,7 @@
 export default function Chute({ disabled, kick, setKick, palavraAtual,setEndgame,setDisabled }) {
   const checkAnswer = kickAnswer =>{
     
-    if ( kickAnswer === palavraAtual) {
+    if ( (kickAnswer === palavraAtual.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))|| kickAnswer === palavraAtual) {
       setDisabled(true)
       setEndgame("win")
     }else{
