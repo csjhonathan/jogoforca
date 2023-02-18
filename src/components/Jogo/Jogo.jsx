@@ -25,7 +25,7 @@ export default function Jogo({ palavras, palavraAtual, setPalavraAtual, img, set
   const handleWord = () => {
 
     // if (palavraAtual === "" || img===6 || (correct.join("") === palavraAtual && correct.join("").length === palavraAtual.length)) {
-    const indiceAleatorio = parseInt(Math.random() * palavras.length) - 1;
+    const indiceAleatorio = parseInt(Math.random()*palavras.length-1);
     const word = palavras[indiceAleatorio];
     setPalavraAtual(word);
     setDisabled(false);
