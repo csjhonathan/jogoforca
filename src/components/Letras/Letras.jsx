@@ -1,11 +1,19 @@
 import alfabeto from "../../utils/alfabeto"
 import LetrasButtons from "./LetrasButtons"
+import styled from "styled-components"
+
+const Letters = styled.div`
+  display: grid;
+  grid-template-columns: repeat(13, 1fr);
+  gap: 11px;
+  width: 664px;
+`
 
 export default function Letras({ palavraAtual, setPalavraAtual, img, setImg, usedLetters, setUsedLetters, disabled, setDisabled, setEndgame, correct, setCorrect}) {
 
 
   return (
-    <div className="letras">
+    <Letters>
       {alfabeto.map((l) => {
         return (
           <LetrasButtons
@@ -24,6 +32,6 @@ export default function Letras({ palavraAtual, setPalavraAtual, img, setImg, use
             setCorrect = {setCorrect}
           />)
       })}
-    </div>
+    </Letters>
   )
 }

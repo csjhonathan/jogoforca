@@ -1,19 +1,21 @@
+import styled from "styled-components"
+
+
 export default function LetrasButtons({ letra, palavraAtual, setPalavraAtual, img, setImg, usedLetters, setUsedLetters, disabled, setDisabled, setEndgame, setCorrect }) {
   
-
   const handleUsedLetter = letter => {
-
+    const normalizedWord = palavraAtual.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
     const used = [...usedLetters, letter]
-    const correctLetters = palavraAtual.split("").map(l => {
+    const correctLetters = normalizedWord.split("").map(l => {
       if (used.includes(l)) {
+        
         return l
       }
     })
-
     setCorrect(correctLetters)
 
     let currentImg = img
-    if (!palavraAtual.includes(letter) && img < 6) {
+    if (!normalizedWord.includes(letter) && img < 6) {
       currentImg = img+1
       setImg(currentImg)
     }
@@ -23,10 +25,10 @@ export default function LetrasButtons({ letra, palavraAtual, setPalavraAtual, im
       setUsedLetters(used)
     }
 
-    if (!palavraAtual.includes(letter) && img < 6) {
+    if (!normalizedWord.includes(letter) && img < 6) {
       setImg(currentImg)
     }
-    if (correctLetters.join("").length === palavraAtual.length && correctLetters.join("") === palavraAtual) {
+    if (correctLetters.join("").length === normalizedWord.length && correctLetters.join("") === normalizedWord) {
       setDisabled(true)
       setEndgame("win")
     } else if (currentImg === 6) {
@@ -36,10 +38,29 @@ export default function LetrasButtons({ letra, palavraAtual, setPalavraAtual, im
   }
 
   return (
-    <button data-test="letter"  
+    <LettersButton data-test="letter"  
     disabled={disabled} 
-    className={`letra ${(disabled ? "" : "enabled")}`} 
     onClick={() => handleUsedLetter(letra)}
-    >{letra.toUpperCase()}</button>
+    >{letra.toUpperCase()}</LettersButton>
   )
 }
+
+const LettersButton = styled.button`
+
+  width: 40px;
+  height: 40px;
+  background:${({disabled}) => disabled ? "#9FAAB5" :"#E1ECF4"};
+  border: 1px solid #7AA7C7;
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: ${({disabled}) => disabled ? "#798A9F" :"#39739D"};
+  transition : all .3s;
+  cursor : ${({disabled}) => disabled ? "" :"pointer"};
+  &:hover{
+    background: #9FAAB5;
+    transition: all .3s;
+  }
+
+`

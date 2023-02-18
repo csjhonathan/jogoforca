@@ -3,7 +3,30 @@ import Letras from "./components/Letras/Letras";
 import Jogo from "./components/Jogo/Jogo";
 import palavras from "./palavras.js";
 import Chute from "./components/Chute";
+import styled from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
+const GlobalStyles = createGlobalStyle`
+  * {
+  box-sizing: border-box;
+  }
+  body {
+    font-family: 'Roboto', sans-serif;
+  }
+`
+
+const GameApp = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+`
+const GameBottom = styled.div`
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`
 function App() {
   const [usedLetters, setUsedLetters] = useState([]);
   const [palavraAtual, setPalavraAtual] = useState("");
@@ -14,7 +37,8 @@ function App() {
   const [kick, setKick] = useState("");
 
   return (
-    <div className="App">
+    <GameApp >
+      <GlobalStyles/>
       <Jogo
         palavras={palavras}
         palavraAtual={palavraAtual}
@@ -31,7 +55,8 @@ function App() {
         setCorrect={setCorrect}
         setKick = {setKick}
       />
-      <div className="bottom">
+
+      <GameBottom >
         <Letras
           palavraAtual={palavraAtual}
           setPalavraAtual={setPalavraAtual}
@@ -54,8 +79,8 @@ function App() {
           setEndgame={setEndgame}
           setDisabled = {setDisabled}
         />
-      </div>
-    </div>
+      </GameBottom>
+    </GameApp>
   );
 }
 
