@@ -1,6 +1,11 @@
 import styled from "styled-components"
 export default function Chute({ disabled, kick, setKick, palavraAtual,setEndgame,setDisabled }) {
   const checkAnswer = kickAnswer =>{
+    
+    if(kickAnswer===""){
+      return
+    }
+
     const kickAnswerNormalized = kickAnswer.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
     if ( (kickAnswerNormalized === palavraAtual.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))|| kickAnswerNormalized === palavraAtual) {
       setDisabled(true)
