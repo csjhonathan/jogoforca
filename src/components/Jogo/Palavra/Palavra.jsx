@@ -33,8 +33,8 @@ width: 200px;
 `
 const Word = styled.div`
 
-height: 68px;
-  display: flex;
+  height: 68px;
+  display: ${({palavraAtual}) =>  palavraAtual.length === 0 ? "none" : "flex"};
   align-items: center;
   justify-content: flex-end;
   font-weight: 700;
@@ -42,5 +42,4 @@ height: 68px;
   font-size: 50px;
   line-height: 68px;
   letter-spacing: 10px;
-  display: ${({palavraAtual}) =>  palavraAtual.length === 0 ? "none" : "initial"};
 `
