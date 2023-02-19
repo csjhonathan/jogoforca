@@ -5,7 +5,7 @@ export default function Palavra({ palavraAtual, handleWord, endGame, img, correc
 
     <RightBoard >
       <SelectWord data-test="choose-word" onClick={() => handleWord()}>Escolher Palavra</SelectWord>
-      <Word data-test="word" endGame = {endGame}>{palavraAtual.map((e) => correct.includes(e.normalize('NFD').replace(/[\u0300-\u036f]/g, '')) || img === 6 || endGame === "lose" || endGame === "win" ? e : "_")}</Word>
+      <Word data-test="word" endGame = {endGame} palavraAtual = {palavraAtual}>{palavraAtual.map((e) => correct.includes(e.normalize('NFD').replace(/[\u0300-\u036f]/g, '')) || img === 6 || endGame === "lose" || endGame === "win" ? e : "_")}</Word>
     </RightBoard>
 
   )
@@ -42,5 +42,5 @@ height: 68px;
   font-size: 50px;
   line-height: 68px;
   letter-spacing: 10px;
-
+  display: ${({palavraAtual}) =>  palavraAtual.length === 0 ? "none" : "initial"};
 `
