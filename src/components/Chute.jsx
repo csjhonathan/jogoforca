@@ -41,10 +41,25 @@ const KickArea = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  
+  @media (max-width : 768px){
+    display: flex;
+    justify-content: space-evenly;  
+  }
 `
 const KickTitle = styled.label`
 font-size: 20px;
 line-height: 23px;
+@media (max-width : 768px){
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  line-height: 12px;
+  word-break: break-word;
+  width: 15%;
+  height: 100%;
+  }
 `
 
 const KickInput = styled.input`
@@ -58,6 +73,10 @@ const KickInput = styled.input`
   padding: 10px;
   &:focus{
     outline: 1px solid #CCCCCC;
+  }
+  @media (max-width : 768px){
+    width: 60%;
+    height: 40px;
   }
 `
 const KickButton = styled.button `
@@ -75,5 +94,14 @@ const KickButton = styled.button `
   &:hover{
     background: #9FAAB5;
     transition: all .3s;
+  }
+  @media (max-width : 768px){
+    width: 50px;
+    height: 100%;
+    font-size: 13px;
+    line-height: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `

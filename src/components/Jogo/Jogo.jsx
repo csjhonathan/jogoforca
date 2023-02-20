@@ -7,24 +7,34 @@ const Game = styled.div`
   align-items: center;
   flex-direction: column;
   width: 1100px;
+  @media (max-width : 768px){
+    width: 100%;
+  }
 `
 const Forca = styled.img`
   width: 400px;
   height: 467px;
+  @media (max-width : 768px){
+    width: 200px;
+    height: 233px;
+  }
 `
 const Board = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 600px;
+  height: 600px;
   width: 1100px;
+  @media (max-width : 768px){
+    width: 100%;
+    max-height: 40vh;
+  }
 `
 export default function Jogo({ palavras, palavraAtual, setPalavraAtual, img, setImg, usedLetters, setUsedLetters, setDisabled, endGame, setEndgame, correct, setCorrect, setKick }) {
 
 
   const handleWord = () => {
 
-    // if (palavraAtual === "" || img===6 || (correct.join("") === palavraAtual && correct.join("").length === palavraAtual.length)) {
     const indiceAleatorio = parseInt(Math.random()*palavras.length-1);
     const word = palavras[indiceAleatorio];
     setPalavraAtual(word);
@@ -34,7 +44,6 @@ export default function Jogo({ palavras, palavraAtual, setPalavraAtual, img, set
     setUsedLetters([])
     setCorrect([])
     setKick("")
-    // }
 
   }
 

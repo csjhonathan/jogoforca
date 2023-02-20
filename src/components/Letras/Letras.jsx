@@ -7,6 +7,12 @@ const Letters = styled.div`
   grid-template-columns: repeat(13, 1fr);
   gap: 11px;
   width: 664px;
+  @media (max-width : 768px){
+    grid-template-columns: repeat(9, 1fr);
+    width: 100%;
+    gap: 1px;
+  
+  }
 `
 
 export default function Letras({ palavraAtual, setPalavraAtual, img, setImg, usedLetters, setUsedLetters, disabled, setDisabled, setEndgame, correct, setCorrect}) {
@@ -30,6 +36,7 @@ export default function Letras({ palavraAtual, setPalavraAtual, img, setImg, use
             setEndgame = {setEndgame}
             correct = {correct}
             setCorrect = {setCorrect}
+            
           />)
       })}
     </Letters>

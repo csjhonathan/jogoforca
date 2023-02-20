@@ -6,12 +6,7 @@ export default function LetrasButtons({ letra, palavraAtual, setPalavraAtual, im
   const handleUsedLetter = letter => {
     const normalizedWord = palavraAtual.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
     const used = [...usedLetters, letter]
-    const correctLetters = normalizedWord.split("").map(l => {
-      if (used.includes(l)) {
-        
-        return l
-      }
-    })
+    const correctLetters = normalizedWord.split("").map(l => used.includes(l) ? l : undefined)
     setCorrect(correctLetters)
 
     let currentImg = img

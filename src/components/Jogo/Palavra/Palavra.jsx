@@ -17,10 +17,14 @@ const RightBoard = styled.div`
   height: 400px;
   align-items: flex-end;
   justify-content: space-between;
+  @media (max-width : 768px){
+    width: 55%;
+    height: 80%;
+  }
 
 `
 const SelectWord = styled.button`
-width: 200px;
+  width: 200px;
   height: 60px;
   background: #27AE60;
   border-radius: 8px;
@@ -30,6 +34,11 @@ width: 200px;
   color: #FFFFFF;
   border: none;
   cursor : pointer;
+  @media (max-width : 768px){
+    width: 133px;
+    height: 40px;
+    font-size: 13px;
+  }
 `
 const Word = styled.div`
 
@@ -42,4 +51,10 @@ const Word = styled.div`
   font-size: 50px;
   line-height: 68px;
   letter-spacing: 10px;
+
+  @media (max-width : 768px){
+    font-size: 25px;
+    line-height: 38px;
+    letter-spacing: 2px;
+  }
 `

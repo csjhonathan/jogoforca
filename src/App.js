@@ -12,20 +12,33 @@ const GlobalStyles = createGlobalStyle`
   }
   body {
     font-family: 'Roboto', sans-serif;
+    @media (max-width : 768px){
+      width: 100vw;
+      height: 100vh;
+    }
   }
+  
 `
 
 const GameApp = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+  width: 100vw;
+  height: 100vh;
+  @media (max-width : 768px){
+    justify-content: space-evenly;
+  }
 `
 const GameBottom = styled.div`
   height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media (max-width : 768px){
+    width: 100%;
+    justify-content: space-evenly;
+  }
 `
 function App() {
   const [usedLetters, setUsedLetters] = useState([]);
@@ -37,7 +50,7 @@ function App() {
   const [kick, setKick] = useState("");
 
   return (
-    <GameApp >
+    <GameApp  >
       <GlobalStyles/>
       <Jogo
         palavras={palavras}
